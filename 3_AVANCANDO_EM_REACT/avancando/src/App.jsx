@@ -1,5 +1,6 @@
 import './App.css'
 import img from './assets/img2.jpg'
+import ManageData from './components/ManageData'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <div>
         <img src={img} alt="código react" />
       </div>
+      <ManageData/>
     </div>
   )
 }
