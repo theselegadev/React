@@ -5,9 +5,11 @@ import ListRender from './components/ListRender'
 import ConditionalRender from './components/ConditionalRender'
 import ShowUserName from './components/ShowUserName'
 import { useState } from 'react'
+import CarDetails from './components/CarDetails'
 
 function App() {
   const [name,setName] = useState("Matheus") 
+  const [age,setAge] = useState(17)
 
   return (
     <div className='App'>
@@ -21,8 +23,10 @@ function App() {
       <ManageData/>
       <ListRender/>
       <ConditionalRender/>
-      <ShowUserName name={name}/>
+      <ShowUserName name={name} age={age}/>
       <button onClick={()=>setName("Joaquim")}>Trocar nome de usuário</button>
+      <button onClick={()=>setAge(18)}>Trocar idade</button>
+      <CarDetails brand="Audi" km="100" color="Branco"/>
     </div>
   )
 }
