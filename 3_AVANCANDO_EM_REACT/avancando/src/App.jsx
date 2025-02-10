@@ -3,8 +3,12 @@ import img from './assets/img2.jpg'
 import ManageData from './components/ManageData'
 import ListRender from './components/ListRender'
 import ConditionalRender from './components/ConditionalRender'
+import ShowUserName from './components/ShowUserName'
+import { useState } from 'react'
 
 function App() {
+  const [name,setName] = useState("Matheus") 
+
   return (
     <div className='App'>
       <h1>Avançando com React</h1>
@@ -17,6 +21,8 @@ function App() {
       <ManageData/>
       <ListRender/>
       <ConditionalRender/>
+      <ShowUserName name={name}/>
+      <button onClick={()=>setName("Joaquim")}>Trocar nome de usuário</button>
     </div>
   )
 }
