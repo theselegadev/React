@@ -26,7 +26,9 @@ function App() {
       <ShowUserName name={name} age={age}/>
       <button onClick={()=>setName("Joaquim")}>Trocar nome de usuário</button>
       <button onClick={()=>setAge(18)}>Trocar idade</button>
-      <CarDetails brand="Audi" km="100" color="Branco"/>
+      <CarDetails brand="Audi" km={100000} color="Branco" newCar={false}/>
+      <CarDetails brand="Mercedes" km={1000} color="Azul" newCar={true}/>
+      <CarDetails brand="Ferrari" km={1000} color="Vermelho" newCar={false}/>
     </div>
   )
 }
