@@ -6,6 +6,7 @@ import ConditionalRender from './components/ConditionalRender'
 import ShowUserName from './components/ShowUserName'
 import { useState } from 'react'
 import CarDetails from './components/CarDetails'
+import Fragments from './components/Fragments'
 
 function App() {
   const [name,setName] = useState("Matheus") 
@@ -38,6 +39,7 @@ function App() {
       {cars.map((car)=>(
         <CarDetails brand={car.brand} color={car.color} newCar={car.newCar} km={car.km}/>
       ))}
+      <Fragments propFragment="Teste"/>
     </div>
   )
 }
