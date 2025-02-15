@@ -9,10 +9,17 @@ import CarDetails from './components/CarDetails'
 import Fragments from './components/Fragments'
 import Container from './components/Container'
 import ExecuteFunction from './components/ExecuteFunction'
+import Message from './components/Message'
+import ChangeMessageState from './components/ChangeMessageState'
 
 function App() {
   const [name,setName] = useState("Matheus") 
   const [age,setAge] = useState(17)
+  const [message,setMessage] = useState("")
+
+  function handleMessage (msg){
+    setMessage(msg)
+  } 
 
   const cars = [
     {id:1, brand: "Ferrari", color: "Vermelha", newCar: true, km: 0},
@@ -50,6 +57,8 @@ function App() {
         <p>Esse é o conteúdo</p>
       </Container>
       <ExecuteFunction myFunction={ShowMessage}/>
+      <Message msg={message}/>
+      <ChangeMessageState handleMessage={handleMessage}/>
     </div>
   )
 }
