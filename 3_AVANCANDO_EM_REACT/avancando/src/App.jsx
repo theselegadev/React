@@ -8,6 +8,7 @@ import { useState } from 'react'
 import CarDetails from './components/CarDetails'
 import Fragments from './components/Fragments'
 import Container from './components/Container'
+import ExecuteFunction from './components/ExecuteFunction'
 
 function App() {
   const [name,setName] = useState("Matheus") 
@@ -18,6 +19,10 @@ function App() {
     {id:2, brand: "Mercedes", color: "Branca", newCar: false, km: 1000},
     {id:3, brand: "Chevrolet", color: "Verde", newCar: false, km: 100000}
   ]
+
+  function ShowMessage(){
+    console.log("Evento do componente pai")
+  }
 
   return (
     <div className='App'>
@@ -38,12 +43,13 @@ function App() {
       <CarDetails brand="Mercedes" km={1000} color="Azul" newCar={true}/>
       <CarDetails brand="Ferrari" km={1000} color="Vermelho" newCar={false}/>
       {cars.map((car)=>(
-        <CarDetails brand={car.brand} color={car.color} newCar={car.newCar} km={car.km}/>
+        <CarDetails key={car.id} brand={car.brand} color={car.color} newCar={car.newCar} km={car.km}/>
       ))}
       <Fragments propFragment="Teste"/>
       <Container myValue="teste">
         <p>Esse é o conteúdo</p>
       </Container>
+      <ExecuteFunction myFunction={ShowMessage}/>
     </div>
   )
 }
