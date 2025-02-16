@@ -11,6 +11,7 @@ import Container from './components/Container'
 import ExecuteFunction from './components/ExecuteFunction'
 import Message from './components/Message'
 import ChangeMessageState from './components/ChangeMessageState'
+import UserDetails from './components/UserDetails'
 
 function App() {
   const [name,setName] = useState("Matheus") 
@@ -25,6 +26,27 @@ function App() {
     {id:1, brand: "Ferrari", color: "Vermelha", newCar: true, km: 0},
     {id:2, brand: "Mercedes", color: "Branca", newCar: false, km: 1000},
     {id:3, brand: "Chevrolet", color: "Verde", newCar: false, km: 100000}
+  ]
+
+  const persons = [
+    {
+      id: 1,
+      name: "Matheus",
+      age:17,
+      job:"Programmer"
+    },
+    {
+      id: 2,
+      name: "Gabriel",
+      age: 17,
+      job: "Gestor"
+    },
+    {
+      id: 3,
+      name: "Lucas",
+      age: 26,
+      job: "Trader"
+    }
   ]
 
   function ShowMessage(){
@@ -59,6 +81,9 @@ function App() {
       <ExecuteFunction myFunction={ShowMessage}/>
       <Message msg={message}/>
       <ChangeMessageState handleMessage={handleMessage}/>
+      {persons.map((person)=>(
+        <UserDetails key={person.id} name={person.name} age={person.age} job={person.job}/>
+      ))}
     </div>
   )
 }
