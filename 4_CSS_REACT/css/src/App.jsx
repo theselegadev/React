@@ -3,6 +3,7 @@ import MyComponent from './components/MyComponent'
 
 function App() {
   const n = 15
+  const redTitle = true
 
   return (
     <div className='App'>
@@ -12,6 +13,7 @@ function App() {
       <p style={{color: "blue", padding: "50px", borderTop: "2px solid red"}}>Este paragráfo é para CSS inline</p>
       <h2 style={n<10 ? {color: "purple"} : {color: "pink"}}>Css dinâmico</h2>
       <h2 style={n>10 ? {color: "purple"} : {color: "pink"}}>Css dinâmico</h2>
+      <h2 className={redTitle ? "red-title" : "title"}>Classes dinâmicas</h2>
     </div>
   )
 }
